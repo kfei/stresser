@@ -1,0 +1,16 @@
+[amqp]
+# The AMQP server for message queue
+server = 10.62.3.169
+
+[task]
+# Task name
+name = The First Task
+
+# Task type, can be sikuli, script, bin.
+type = sikuli
+
+# URL for executable which will be downloaded by soldiers
+url = http://10.62.3.169:8888/test.skl
+
+# Number of soldiers
+count = 1

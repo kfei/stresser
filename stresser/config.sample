@@ -1,0 +1,10 @@
+[amqp]
+# The AMQP server for message queue
+server = 10.62.3.169
+
+[bin]
+# Binary for Java
+java_bin = C:\Program Files (x86)\Java\jre6\bin\java.exe
+
+# IDE binary for Sikuli
+sikuli_ide = C:\Program Files (x86)\Sikuli X\sikuli-ide.jar
