@@ -4,12 +4,12 @@ Stresser is a large-scale stress testing framework consists of one *Commander*
 (client) and an arbitrary number of *Soldiers* (servers).
 
 By broadcasting a pre-defined *task*, the Commander can trigger all Soldiers to
-generate workload concurrently.
+generate workloads concurrently.
 
 A *task* can be:
 
 * [Sikuli](http://www.sikuli.org/) - Great for tests based on GUI operations.
-* script - e.g. `*.sh` on *nix system or `*.bat` on Windows.
+* script - e.g. `script.sh` on Unix-like systems or `batch.bat` on Windows.
 * binary executable.
 
 To generate more stress, just add more Soldiers.
@@ -33,7 +33,7 @@ A sample configuration file for Soldiers:
 
 ```INI
 [amqp]
-# The AMQP server for message queue
+# The AMQP server for message broker
 server = 5.5.6.6
 
 [bin]
@@ -57,7 +57,7 @@ A sample configuration file (with a Sikuli task defined) for the Commander:
 
 ```INI
 [amqp]
-# The AMQP server for message queue
+# The AMQP server for message broker
 server = 5.5.6.6
 
 [task]

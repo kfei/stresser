@@ -1,5 +1,5 @@
 [amqp]
-# The AMQP server for message queue
+# The AMQP server for message broker
 server = 5.5.6.6
 
 [task]
