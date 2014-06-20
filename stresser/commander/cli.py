@@ -77,7 +77,7 @@ if __name__ == '__main__':
     rpc = RpcClient(config)
 
     # Request soldiers to run task.
-    print " [x] Requesting task..."
+    print " [x] Broadcasting task: '%s'..." % config.task['task_name']
     rpc.call(json.dumps(config.task))
 
     # Waiting for any messages from the result queue.

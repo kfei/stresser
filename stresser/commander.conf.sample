@@ -1,0 +1,14 @@
+[amqp]
+# The AMQP server for message queue
+server = 5.5.6.6
+
+[task]
+# Task name
+name = The First Task
+# Task type, e.g. sikuli, script, bin.
+type = sikuli
+# URL for executable which will be downloaded by Soldiers
+url = http://5.5.6.6:8000/first.skl
+# The number of Soldiers. Commander will stop when the specified number of
+# results have got.
+count = 32
