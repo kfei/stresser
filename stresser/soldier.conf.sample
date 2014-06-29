@@ -7,3 +7,5 @@ server = 5.5.6.6
 java_bin = C:\Program Files (x86)\Java\jre6\bin\java.exe
 # Path for Sikuli IDE
 sikuli_ide = C:\Program Files (x86)\Sikuli X\sikuli-ide.jar
+# Path for Shell (*nix systems only)
+shell = /bin/zsh

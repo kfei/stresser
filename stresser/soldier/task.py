@@ -50,6 +50,22 @@ class Task(object):
 
     def run_sikuli(self, java_bin, sikuli_ide):
         cmd = [java_bin, '-jar', sikuli_ide, '-r', self.task_executable]
+
+        return call(cmd, shell=True)
+
+    def run_script(self, shell):
+        import platform
+
+        if platform.system() == 'Windows':
+            cmd = [self.task_executable]
+        else:
+            cmd = [shell] + [self.task_executable]
+
+        return call(cmd, shell=True)
+
+    def run_bin(self):
+        cmd = [self.task_executable]
+
         return call(cmd, shell=True)
 
     def start(self, config):
@@ -57,9 +73,13 @@ class Task(object):
 
         if self.task_type == 'sikuli':
             ret = self.run_sikuli(config.java_bin, config.sikuli_ide)
+        elif self.task_type == 'script':
+            ret = self.run_script(config.shell)
+        elif self.task_type == 'bin':
+            ret = self.run_bin()
         else:
-            # TODO: Implement task types for 'script', 'bin', etc.
-            pass
+            print("[ERROR] Task type is not supported")
 
         self.clean_executable()
+
         return ret
