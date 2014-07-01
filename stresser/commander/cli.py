@@ -67,7 +67,7 @@ class RpcClient(object):
                                    properties=properties, body=task)
 
 
-if __name__ == '__main__':
+def main():
     if len(sys.argv) > 1:
         config_file = sys.argv[1]
     else:
@@ -82,3 +82,6 @@ if __name__ == '__main__':
 
     # Waiting for any messages from the result queue.
     rpc.channel.start_consuming()
+
+if __name__ == '__main__':
+    main()

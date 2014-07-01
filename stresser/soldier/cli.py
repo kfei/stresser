@@ -65,7 +65,7 @@ class RpcServer(object):
         ch.basic_ack(delivery_tag=method.delivery_tag)
 
 
-if __name__ == '__main__':
+def main():
     if len(sys.argv) > 1:
         config_file = sys.argv[1]
     else:
@@ -79,3 +79,7 @@ if __name__ == '__main__':
 
     print " [x] Soldier %s is awaiting RPC requests" % rpc.uuid
     rpc.channel.start_consuming()
+
+
+if __name__ == '__main__':
+    main()

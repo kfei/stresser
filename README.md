@@ -110,3 +110,7 @@ On the Commander's console:
 
 You only have to deploy a message broker which speaks
 [AMQP](http://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol).
+
+## Versioning
+Stresser follows [Semantic Versioning](http://semver.org/), both SemVer and
+SemVerTag.
