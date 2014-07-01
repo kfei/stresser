@@ -1,16 +1,16 @@
 # Stresser
 
-Stresser is a large-scale stress testing framework consists of one *Commander*
-(client) and an arbitrary number of *Soldiers* (servers).
+Stresser is a large-scale stress testing framework consists of one
+**Commander** (client) and an arbitrary number of **Soldiers** (servers).
 
-By broadcasting a pre-defined *task*, the Commander can trigger all Soldiers to
-generate workloads concurrently.
+By broadcasting a pre-defined **task**, the Commander can trigger all Soldiers
+to generate workloads concurrently.
 
-A *task* can be:
+A task can be:
 
 * [Sikuli](http://www.sikuli.org/) - Great for tests based on GUI operations.
 * script - e.g. `script.sh` on Unix-like systems or `batch.bat` on Windows.
-* binary executable.
+* bin - Binary executables.
 
 To generate more stress, just add more Soldiers.
 
@@ -105,6 +105,9 @@ On the Commander's console:
  ... (skipped)
  [.] Soldier bd88148e-fa36-4017-ac5b-099ba83570fe took 0:11:59 to complete.
 ```
+
+The Commander will stop when the task is done on each Soldier, but Soldiers are
+still running, hence you can submit another task over and over again.
 
 ## Requirements
 
