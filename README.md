@@ -106,7 +106,7 @@ On the Commander's console:
  [.] Soldier bd88148e-fa36-4017-ac5b-099ba83570fe took 0:11:59 to complete.
 ```
 
-The Commander will stop when the task is done on each Soldier, but Soldiers are
+The Commander will stop when the task is done on all Soldiers, but Soldiers are
 still running, hence you can submit another task over and over again.
 
 ## Requirements
