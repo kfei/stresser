@@ -77,7 +77,7 @@ def main():
     rpc = RpcClient(config)
 
     # Request soldiers to run task.
-    print " [x] Broadcasting task: '%s'..." % config.task['task_name']
+    print " [x] Broadcasting task: '%s'..." % config.task[0]['task_name']
     rpc.call(json.dumps(config.task))
 
     # Waiting for any messages from the result queue.

@@ -1,4 +1,5 @@
-from ConfigParser import SafeConfigParser
+import sys
+from ConfigParser import SafeConfigParser, NoOptionError
 
 
 class Config(object):
@@ -6,8 +7,19 @@ class Config(object):
         parser = SafeConfigParser()
         parser.read(config_file)
 
-        self.task = [{'task_name': parser.get('task', 'name'),
-                 'task_type': parser.get('task', 'type'),
-                 'task_url': parser.get('task', 'url')}]
-        self.wait_for_stop = parser.getint('task', 'count')
-        self.amqp_server = parser.get('amqp', 'server')
+        try:
+            self.amqp_server = parser.get('amqp', 'server')
+        except NoOptionError:
+            sys.exit(u'Can not find AMQP message broker setting')
+
+        try:
+            self.task = [{'task_name': parser.get('task', 'name'),
+                          'task_type': parser.get('task', 'type'),
+                          'task_url': parser.get('task', 'url')}]
+        except NoOptionError:
+            sys.exit(u'Task parse failed')
+
+        try:
+            self.wait_for_stop = parser.getint('task', 'count')
+        except NoOptionError:
+            sys.exit(u'Can not find setting for number of Soldiers')
