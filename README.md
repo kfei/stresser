@@ -78,7 +78,7 @@ Start broadcasting task:
 
 ```
 $ stress-commander commander.conf
- [x] Broadcasting task: `The First Task'...
+ [x] Broadcasting task: 'The First Task'...
 ```
 
 ### Soldiers performing task

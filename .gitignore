@@ -3,3 +3,4 @@
 .ropeproject/
 dist/
 build/
+stresser.egg-info/
