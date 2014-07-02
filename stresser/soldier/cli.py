@@ -19,7 +19,9 @@ class RpcServer(object):
         self._config = config
 
         # Create a connection to AMQP server.
-        conn = pika.ConnectionParameters(host=self._config.amqp_server)
+        conn = pika.ConnectionParameters(host=self._config.amqp_server,
+                                         connection_attempts=3,
+                                         retry_delay=3)
         self.connection = pika.BlockingConnection(conn)
 
         # Get a channel from connection.
