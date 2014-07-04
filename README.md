@@ -24,8 +24,9 @@ pip install stresser
 
 ## Quick Start
 
-Once you've got Stresser installed, prepare config files for the Commander and
-Soldiers. Then run `stress-commander` and `stress-soldier` respectively.
+Once you've got Stresser installed, prepare configuration files for the
+Commander and Soldiers. Then run `stress-commander` and `stress-soldier`
+respectively.
 
 ### Start Soldiers
 
@@ -65,7 +66,7 @@ server = 5.5.6.6
 [task]
 # Task name
 name = The First Task
-# Task type, e.g. sikuli, script, bin.
+# Task type, e.g. sikuli, script and bin.
 type = sikuli
 # URL for executable which will be downloaded by Soldiers
 url = http://5.5.6.6:8000/first.skl

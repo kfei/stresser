@@ -17,7 +17,7 @@ class Task(object):
         self.task_url = json.loads(j)[0]['task_url']
         self.task_executable = None
 
-    def get_executable(self, url):
+    def get_executable(self):
         """
         Download the task's executable file to local.
         """
@@ -28,9 +28,9 @@ class Task(object):
 
         try:
             temp_dir = tempfile.mkdtemp()
-            split = urlparse.urlsplit(url)
+            split = urlparse.urlsplit(self.task_url)
             file_name = join(temp_dir, split.path.split("/")[-1])
-            urllib.urlretrieve(url, file_name)
+            urllib.urlretrieve(self.task_url, file_name)
         except:
             sys.exit(1)
 

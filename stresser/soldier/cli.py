@@ -44,7 +44,7 @@ class RpcServer(object):
         print " [.] Discovered task '%s'" % task.task_name
         print " [.] Downloading task executable from %s" % task.task_url
         # Download the task's executable
-        task.get_executable(task.task_url)
+        task.get_executable()
 
         # Start timer.
         start = clock()
