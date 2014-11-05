@@ -13,14 +13,9 @@ class Config(object):
             sys.exit(u'Can not find AMQP message broker setting')
 
         try:
-            self.java_bin = parser.get('bin', 'java_bin')
+            self.sikuli_cmd = parser.get('bin', 'sikuli_cmd')
         except NoOptionError:
-            self.java_bin = None
-
-        try:
-            self.sikuli_ide = parser.get('bin', 'sikuli_ide')
-        except NoOptionError:
-            self.sikuli_ide = None
+            self.sikuli_cmd = None
 
         try:
             self.shell = parser.get('bin', 'shell')

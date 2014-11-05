@@ -48,8 +48,8 @@ class Task(object):
         except:
             print("[INFO] Failed to clean temporary files.")
 
-    def run_sikuli(self, java_bin, sikuli_ide):
-        cmd = [java_bin, '-jar', sikuli_ide, '-r', self.task_executable]
+    def run_sikuli(self, sikuli_cmd):
+        cmd = [sikuli_cmd, '-r', self.task_executable]
 
         return call(cmd, shell=True)
 
@@ -72,7 +72,7 @@ class Task(object):
         ret = 1
 
         if self.task_type == 'sikuli':
-            ret = self.run_sikuli(config.java_bin, config.sikuli_ide)
+            ret = self.run_sikuli(config.sikuli_cmd)
         elif self.task_type == 'script':
             ret = self.run_script(config.shell)
         elif self.task_type == 'bin':

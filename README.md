@@ -40,10 +40,8 @@ A sample configuration file for Soldiers:
 server = 5.5.6.6
 
 [bin]
-# Path for Java binary
-java_bin = C:\Program Files (x86)\Java\jre6\bin\java.exe
-# Path for Sikuli IDE
-sikuli_ide = C:\Program Files (x86)\Sikuli X\sikuli-ide.jar
+# Path for Sikuli's runIDE.cmd
+sikuli_cmd = C:\sikuli\runIDE.cmd
 # Path for Shell (*nix systems only)
 shell = /bin/zsh
 ```
